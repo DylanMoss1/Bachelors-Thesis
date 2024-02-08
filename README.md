@@ -1,3 +1,5 @@
-My Cambridge Computer Science course Part II Dissertation. 
+**Award-winning** Cambridge Computer Science Part II (3rd Year) Dissertation. 
 
-Kautuka is an automatic-parallelisation language: you write sequential code and the compiler will convert it to parallel code automatically!
+An _automatically-parallelising_ compiler written in OCaml: compiling a user-annotated subset of sequential Go code into multithreaded Go code. 
+
+Utilises a mixture of _effect tracking_ and _cost analysis_. Cost analysis is a mixture of _static_ and _dynamic_ analysis which allows us to estimate both data structure sizes and execution-time estimates for programs.
