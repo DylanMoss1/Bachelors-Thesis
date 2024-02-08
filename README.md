@@ -1,4 +1,4 @@
-#Automatic Parallelisation using Effect Tracking and Cost Analysis 
+# Automatic Parallelisation using Effect Tracking and Cost Analysis 
 
 **Award-winning** Cambridge Computer Science Part II (3rd Year) Dissertation. 
 
