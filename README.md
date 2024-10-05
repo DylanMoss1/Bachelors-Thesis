@@ -1,6 +1,6 @@
 # Automatic Parallelisation using Effect Tracking and Cost Analysis 
 
-**Award-winning**. Awarded the CST Department Prize for a Highly Commended Dissertation (Part II) in the Computer Science Tripos for Part II 2023. 
+**Award-winning**. Awarded the CST Department Prize for a Highly Commended Dissertation in the Computer Science Tripos for Part II 2023. 
 
 An _automatic-parallelisation_ compiler written in OCaml: compiling a user-annotated subset of sequential Go code into multithreaded Go code. 
 
