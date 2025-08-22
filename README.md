@@ -2,7 +2,7 @@
 
 An OCaml transpiler which compiles (annotated) sequential Go code into multithreaded Go code.
 
-Accompanying Code: [https://github.com/DylanMoss1/University-Thesis](https://github.com/DylanMoss1/Kautuka).
+Accompanying Code: [https://github.com/DylanMoss1/Kautuka](https://github.com/DylanMoss1/Kautuka).
 
 ### Problem Statement
 
