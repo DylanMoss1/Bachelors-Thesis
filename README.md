@@ -19,6 +19,8 @@ This project solves these problems with two steps of static analysis:
 
 If sequential blocks of code meet both of these requirements, we can **automatically parallelise** these blocks when compiling the program. Our analysis provides us static guarantees that this operation is safe, and strong evidence that code performance will improve.
 
+![](Images/Architecture.png)
+
 ### Results
 
 This technique improved runtime performance by an average of 35% on our benchmarks.
