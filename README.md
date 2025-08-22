@@ -17,7 +17,7 @@ This project solves these problems with two steps of static analysis:
 
 - **Statically estimate performance improvements:** We also extend classic type systems with cost analysis: static analysis which estimates the size, and hence run-time performance, of data type instances. This allows us to predict how long programs will run for, and hence determine if there is any benefit in parallelising adjacent blocks of code. We require minor annotations from programmers in order to estimate data-type sizes that cannot be inferred (such as the upper bounds of user inputs).
 
-If sequential blocks of code meet both of these requirements, we can **automatically parallelise** the code when compiling the program. Our analysis provides us static guarantees that this operation is safe, and strong evidence that code performance will improve.
+If sequential blocks of code meet both of these requirements, we can **automatically parallelise** these blocks when compiling the program. Our analysis provides us static guarantees that this operation is safe, and strong evidence that code performance will improve.
 
 ### Results
 
