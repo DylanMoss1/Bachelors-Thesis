@@ -1,7 +1,26 @@
-# Automatic Parallelisation using Effect Tracking and Cost Analysis 
+# Automatic Parallelisation using Effect Tracking and Cost Analysis
 
-An _automatic-parallelisation_ compiler written in OCaml: compiling a user-annotated subset of sequential Go code into multithreaded Go code. 
+An OCaml transpiler which compiles (annotated) sequential Go code into multithreaded Go code.
 
-**Award-winning**: Awarded the Highly Commended Dissertation Award in the Computer Science Tripos for Part II 2023. 
+Accompanying Code: [https://github.com/DylanMoss1/University-Thesis](https://github.com/DylanMoss1/Kautuka).
 
-Utilises a mixture of _effect tracking_ and _cost analysis_. Effect tracking determines whether two blocks of code can be run concurrently without interfering. Cost analysis combines _static_ and _dynamic_ analysis, to estimate both data-structure sizes and execution times for programs. This allows us to estimate whether parallelising two blocks of code will provide a runtime improvement. If blocks of code can be parallelised to reduce the program's runtime without interfering with each other, they are compiled into their parallelised form in the resulting multithreaded Go code.
+### Problem Statement
+
+Turning sequential code into parallel code can improve program performance – but programmers often face two major problems: 
+- You must ensure that threads do not interfere (especially if they share state).
+- It is not always obvious if parallelisation leads to performance improvements for non-trivial examples.
+
+### Solution
+
+This project solves these problems with two steps of static analysis: 
+- **Preventing thread interference:** We can track program side effects (such as variable mutations, file writes, etc.) using an effects systems (an extension of a classic type system). This allows us to prevent thread interference by (conservatively) statically verifying that threads do not contain conflicting side effects.
+
+- **Statically estimate performance improvements:** We also extend classic type systems with cost analysis: static analysis which allows us to estimate the size, and hence run-time performance, of data type instances. This allows us to predict how long programs will run for, and hence determine if there is any benefit in parallelising adjacent blocks of code. We require minor annotations from programmers in order to estimate data-type sizes that cannot be inferred (such as the upper bounds of user inputs).
+
+If blocks of code meet both of these requirements, we can **automatically parallelise** sequential code with static guarantees that this operation is safe, and a reasonable guess that this improves code performance.
+
+### Results
+
+This technique improved runtime performance by an average of 35% on our benchmarks.
+
+This dissertation achieved 90% for my BA Computer Science dissertation at the University of Cambridge, awarding me the CST Department Prize "Highly Commended Dissertation".
