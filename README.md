@@ -13,11 +13,11 @@ Turning sequential code into parallel code can improve program performance – b
 ### Solution
 
 This project solves these problems with two steps of static analysis: 
-- **Preventing thread interference:** We can track program side effects (such as variable mutations, file writes, etc.) using an effects systems (an extension of a classic type system). This allows us to prevent thread interference by (conservatively) statically verifying that threads do not contain conflicting side effects.
+- **Preventing thread interference:** We can track program side effects (such as variable mutations, file writes, etc.) using an effects systems (an extension of a classic type system). We can prove that threads do not interfere by statically verifying that they do not contain conflicting side effects.
 
-- **Statically estimate performance improvements:** We also extend classic type systems with cost analysis: static analysis which allows us to estimate the size, and hence run-time performance, of data type instances. This allows us to predict how long programs will run for, and hence determine if there is any benefit in parallelising adjacent blocks of code. We require minor annotations from programmers in order to estimate data-type sizes that cannot be inferred (such as the upper bounds of user inputs).
+- **Statically estimate performance improvements:** We also extend classic type systems with cost analysis: static analysis which estimates the size, and hence run-time performance, of data type instances. This allows us to predict how long programs will run for, and hence determine if there is any benefit in parallelising adjacent blocks of code. We require minor annotations from programmers in order to estimate data-type sizes that cannot be inferred (such as the upper bounds of user inputs).
 
-If blocks of code meet both of these requirements, we can **automatically parallelise** sequential code with static guarantees that this operation is safe, and a reasonable guess that this improves code performance.
+If sequential blocks of code meet both of these requirements, we can **automatically parallelise** the code when compiling the program. Our analysis provides us static guarantees that this operation is safe, and strong evidence that code performance will improve.
 
 ### Results
 
