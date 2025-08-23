@@ -23,6 +23,6 @@ If sequential blocks of code meet both of these requirements, we can **automatic
 
 ### Results
 
-This technique improved runtime performance by an average of 35% on our benchmarks.
+This technique improved runtime performance by an average of 35% across our benchmarks.
 
 This dissertation achieved 90% for my BA Computer Science dissertation at the University of Cambridge, awarding me the CST Department Prize "Highly Commended Dissertation".
